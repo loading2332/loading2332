@@ -4,41 +4,36 @@
 
     @keyframes logo-anim {
       0% {
-        stroke-dashoffset: 3500; 
+        stroke-dashoffset: 1600; /* 修改点：减少距离，让起步更快 */
         fill-opacity: 0;
         stroke-opacity: 1;
       }
       5% {
-        stroke-dashoffset: 3500;
+        stroke-dashoffset: 1600;
         fill-opacity: 0;
         stroke-opacity: 1;
       }
       
-      /* --- 阶段一：纯写字 --- */
-      /* 到 60% 的时候，字写了大半，填充依然是透明的 */
-      60% {
-        fill-opacity: 0;
-        stroke-opacity: 1;
+      /* --- 边写边填阶段 --- */
+      /* 从 40% 开始，颜色就开始偷偷浮现了 */
+      40% {
+        fill-opacity: 0; 
       }
-
-      /* --- 阶段二：无缝衔接 (关键) --- */
-      /* 从 60% 到 70%： */
-      /* 1. 笔画继续走完最后一点 (dashoffset 归零) */
-      /* 2. 同时！颜色从透明变实 (fill-opacity 变 1) */
-      /* 这样当笔停下时，颜色已经是满的了，绝对没有停顿 */
-      70% {
+      
+      /* 到 75% 时：笔画刚好走完，颜色同时也刚好填满 */
+      /* 这样就没有任何“等待”的缝隙 */
+      75% {
         stroke-dashoffset: 0;
-        fill-opacity: 1;      /* 颜色填满 */
-        stroke-opacity: 0;    /* 描边淡出 (避免描边叠加变粗) */
+        fill-opacity: 1;
+        stroke-opacity: 0;
       }
       
-      /* --- 阶段三：展示 --- */
+      /* --- 展示阶段 --- */
       95% {
         fill-opacity: 1;
         stroke-opacity: 0;
       }
 
-      /* --- 重置 --- */
       100% {
         fill-opacity: 0;
         stroke-opacity: 0;
@@ -54,8 +49,9 @@
       stroke-linecap: round;
       stroke-linejoin: round;
       
-      stroke-dasharray: 3500; 
-      stroke-dashoffset: 3500;
+      /* 修改点：这里也改为 1600，匹配实际长度 */
+      stroke-dasharray: 1600; 
+      stroke-dashoffset: 1600;
       
       /* 8秒循环 */
       animation: logo-anim 8s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
