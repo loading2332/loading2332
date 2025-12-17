@@ -1,20 +1,18 @@
-<p align="center">
-  <img src="image/zinc.svg" width="100%" alt="Signature Animation" />
-</p>
+<div align="left">
+  <img src="image/zinc.svg" width="55%" alt="animation" />
+</div>
 
-### 💻 **Development environment：**
+
+
+## 📊 **GitHub Stats:**
 
 <p>
-  <img src="https://img.shields.io/badge/Vue-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D" alt="Vue">
-  <img src="https://img.shields.io/badge/Nuxt-002D3A?style=for-the-badge&logo=nuxt.js&logoColor=white" alt="Nuxt">
-  <img src="https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white" alt="Electron">
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TS">
-  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node">
-  <img src="https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white" alt="Git">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://github-readme-stats.vercel.app/api?username=loading2332&show_icons=true&theme=dark&hide_border=true" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=loading2332&layout=compact&theme=dark&hide_border=true" alt="Top Langs" />
 </p>
 
 
-### 👀 **Visitors statistics：**
+
+## 👀 **Visitors statistics：**
 
 ![Visitor Count](https://count.getloli.com/@loading2332?name=loading2332&theme=booru-lewd&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)
