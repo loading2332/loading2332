@@ -34,8 +34,9 @@
       }
 
       100% {
-        fill-opacity: 0;
-        stroke-opacity: 0;
+        stroke-dashoffset: 0;
+        fill-opacity: 1;    
+        stroke-opacity: 0;  
       }
     }
 
@@ -51,7 +52,7 @@
       stroke-dashoffset: 1600;
       
 
-      animation: logo-anim 4.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+      animation: logo-anim 4.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
       transform-origin: center;
     }
   </style>
@@ -83,3 +84,4 @@
 
   </g>
 </svg>
+
