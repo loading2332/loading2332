@@ -1,6 +1,5 @@
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="329pt" height="67pt" viewBox="0 0 329 67" preserveAspectRatio="xMidYMid meet">
   <style>
-    /* 强制白色描边，适配暗色主题 */
     :root { --stroke-color: #ffffff; }
 
     @keyframes logo-anim {
@@ -9,7 +8,6 @@
         fill-opacity: 0;
         stroke-opacity: 1;
       }
-      /* 短暂的停顿 */
       5% {
         stroke-dashoffset: 3500;
         fill-opacity: 0;
@@ -17,22 +15,24 @@
       }
       
       /* --- 写字阶段 --- */
-      /* 到 70% (约5.6秒) 完成书写 */
+      /* 保持在 70% 处写完 (约5.6秒) */
       70% {
         stroke-dashoffset: 0;
         fill-opacity: 0;
         stroke-opacity: 1;
       }
 
-      /* --- 填充阶段 --- */
-      /* 颜色浮现 */
-      80% {
+      /* --- 填充阶段 (极速版) --- */
+      /* 修改点：从 80% 提前到 73% */
+      /* 这意味着填充动作将在 0.24秒内完成，非常干脆 */
+      73% {
         stroke-dashoffset: 0;
         fill-opacity: 1;
         stroke-opacity: 0;
       }
       
       /* --- 展示阶段 --- */
+      /* 展示时间相应变长了 */
       95% {
         fill-opacity: 1;
         stroke-opacity: 0;
@@ -47,18 +47,16 @@
 
     #logo-anim path {
       fill-opacity: 0;
-      
       stroke: var(--stroke-color);
       
-      /* 笔刷效果设置 */
-      stroke-width: 3.5px;     /* 粗线条 */
-      stroke-linecap: round;   /* 圆润笔触 */
+      /* 笔刷效果 */
+      stroke-width: 3.5px;
+      stroke-linecap: round;
       stroke-linejoin: round;
       
       stroke-dasharray: 3500; 
       stroke-dashoffset: 3500;
       
-      /* 改为 8s */
       animation: logo-anim 8s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
       transform-origin: center;
     }
