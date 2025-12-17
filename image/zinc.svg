@@ -8,21 +8,19 @@
         fill-opacity: 0;
         stroke-opacity: 1;
       }
-      /* 稍微缩短起步等待，让它反应更快 */
+
       3% {
         stroke-dashoffset: 1600;
         fill-opacity: 0;
         stroke-opacity: 1;
       }
       
-      /* --- 边写边填 --- */
-      /* 在 50% 的时候（约2秒处）开始让颜色浮现 */
+
       50% {
         fill-opacity: 0; 
       }
       
-      /* --- 完成动作 --- */
-      /* 75% 时（约3.3秒）全部完成：线画完 + 颜色填满 */
+
       75% {
         stroke-dashoffset: 0;
         fill-opacity: 1;
@@ -52,7 +50,7 @@
       stroke-dasharray: 1600; 
       stroke-dashoffset: 1600;
       
-      /* 修改点：总时长改为 4.5s，速度提升近一倍 */
+
       animation: logo-anim 4.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
       transform-origin: center;
     }
