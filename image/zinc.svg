@@ -4,31 +4,32 @@
 
     @keyframes logo-anim {
       0% {
-        stroke-dashoffset: 1600; /* 修改点：减少距离，让起步更快 */
+        stroke-dashoffset: 1600; 
         fill-opacity: 0;
         stroke-opacity: 1;
       }
-      5% {
+      /* 稍微缩短起步等待，让它反应更快 */
+      3% {
         stroke-dashoffset: 1600;
         fill-opacity: 0;
         stroke-opacity: 1;
       }
       
-      /* --- 边写边填阶段 --- */
-      /* 从 40% 开始，颜色就开始偷偷浮现了 */
-      40% {
+      /* --- 边写边填 --- */
+      /* 在 50% 的时候（约2秒处）开始让颜色浮现 */
+      50% {
         fill-opacity: 0; 
       }
       
-      /* 到 75% 时：笔画刚好走完，颜色同时也刚好填满 */
-      /* 这样就没有任何“等待”的缝隙 */
+      /* --- 完成动作 --- */
+      /* 75% 时（约3.3秒）全部完成：线画完 + 颜色填满 */
       75% {
         stroke-dashoffset: 0;
         fill-opacity: 1;
         stroke-opacity: 0;
       }
       
-      /* --- 展示阶段 --- */
+      /* --- 展示定格 --- */
       95% {
         fill-opacity: 1;
         stroke-opacity: 0;
@@ -44,17 +45,15 @@
       fill-opacity: 0;
       stroke: var(--stroke-color);
       
-      /* 笔刷样式 */
       stroke-width: 3.5px;
       stroke-linecap: round;
       stroke-linejoin: round;
       
-      /* 修改点：这里也改为 1600，匹配实际长度 */
       stroke-dasharray: 1600; 
       stroke-dashoffset: 1600;
       
-      /* 8秒循环 */
-      animation: logo-anim 8s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+      /* 修改点：总时长改为 4.5s，速度提升近一倍 */
+      animation: logo-anim 4.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
       transform-origin: center;
     }
   </style>
