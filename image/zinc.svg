@@ -1,70 +1,65 @@
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="329pt" height="67pt" viewBox="0 0 329 67" preserveAspectRatio="xMidYMid meet">
   <style>
-    /* 既然只用暗色主题，那就强制白色描边 */
+    /* 强制白色描边，适配暗色主题 */
     :root { --stroke-color: #ffffff; }
 
     @keyframes logo-anim {
       0% {
-        /* 初始状态：线条完全缩回，看不见 */
         stroke-dashoffset: 3500; 
         fill-opacity: 0;
         stroke-opacity: 1;
       }
-      /* 前 5% 的时间停顿一下 */
+      /* 短暂的停顿 */
       5% {
         stroke-dashoffset: 3500;
         fill-opacity: 0;
         stroke-opacity: 1;
       }
       
-      /* --- 写字阶段 (关键) --- */
-      /* 从 5% 到 70% 的时间里慢慢写出来 (非常慢) */
+      /* --- 写字阶段 --- */
+      /* 到 70% (约5.6秒) 完成书写 */
       70% {
-        stroke-dashoffset: 0; /* 线条走完 */
-        fill-opacity: 0;      /* 此时还没有填充颜色，只有粗线条 */
+        stroke-dashoffset: 0;
+        fill-opacity: 0;
         stroke-opacity: 1;
       }
 
-      /* --- 填充过渡阶段 --- */
-      /* 从 70% 到 80%，粗线条淡出，原本的颜色淡入 */
+      /* --- 填充阶段 --- */
+      /* 颜色浮现 */
       80% {
         stroke-dashoffset: 0;
-        fill-opacity: 1;      /* 颜色填满 */
-        stroke-opacity: 0;    /* 描边消失 */
+        fill-opacity: 1;
+        stroke-opacity: 0;
       }
       
       /* --- 展示阶段 --- */
-      /* 保持完整状态到 95% */
       95% {
         fill-opacity: 1;
         stroke-opacity: 0;
       }
 
-      /* --- 重置阶段 --- */
-      /* 最后快速淡出，准备下一次循环 */
+      /* --- 重置 --- */
       100% {
         fill-opacity: 0;
         stroke-opacity: 0;
       }
     }
 
-    /* 应用动画的设置 */
     #logo-anim path {
-      fill-opacity: 0; /* 初始无填充 */
+      fill-opacity: 0;
       
-      stroke: var(--stroke-color); /* 纯白描边 */
+      stroke: var(--stroke-color);
       
-      /* 【关键修改：笔刷感】 */
-      stroke-width: 3.5px;     /* 大幅加粗线条，模拟笔刷粗细 */
-      stroke-linecap: round;   /* 线条端点变圆润 */
-      stroke-linejoin: round;  /* 线条连接处变圆润 */
-
-      /* 设置足够大的虚线值以覆盖整个路径 */
+      /* 笔刷效果设置 */
+      stroke-width: 3.5px;     /* 粗线条 */
+      stroke-linecap: round;   /* 圆润笔触 */
+      stroke-linejoin: round;
+      
       stroke-dasharray: 3500; 
       stroke-dashoffset: 3500;
       
-      /* 【关键修改：速度】总时长延长到 15秒，使用平滑的缓动曲线 */
-      animation: logo-anim 15s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+      /* 改为 8s */
+      animation: logo-anim 8s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
       transform-origin: center;
     }
   </style>
