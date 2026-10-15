@@ -1,6 +1,7 @@
 <div align="left">
-  <img src="image/zinc.svg" width="55%" alt="animation" />
+  <img src="image/zinc.svg" width="25%" alt="animation" />
 </div>
+<br>
 
 Undergraduate · Graduating in 2028  
 Interested in full-stack development and AI agent development.
